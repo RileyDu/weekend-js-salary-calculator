@@ -12,21 +12,34 @@ function onReady() {
 
 function getFormData(event){
     event.preventDefault();
-    let firstNameElement = event.target.children[0].value
-    let lastNameElement = event.target.children[1].value
-    let employeeIDElement = event.target.children[2].value
-    let employeeTitleElement = event.target.children[3].value
-    let employeeSalaryElement = event.target.children[4].value
+    let firstNameElement = event.target.children[0]
+    let firstNameValue = event.target.children[0].value
+
+    let lastNameElement = event.target.children[1]
+    let lastNameValue = event.target.children[1].value
+
+    let employeeIDElement = event.target.children[2]
+    let employeeIDValue = event.target.children[2].value
+
+    let employeeTitleElement = event.target.children[3]
+    let employeeTitleValue = event.target.children[3].value
+
+    let employeeSalaryElement = event.target.children[4]
+    let employeeSalaryValue = event.target.children[4].value
 
     let newEmployee = {
-        firstName: firstNameElement,
-        lastName:lastNameElement,
-        ID: employeeIDElement,
-        title: employeeTitleElement,
-        salary: employeeSalaryElement
+        firstName: firstNameValue,
+        lastName:lastNameValue,
+        ID: employeeIDValue,
+        title: employeeTitleValue,
+        salary: employeeSalaryValue
     }
-
     employeeArray.push(newEmployee)
+    firstNameElement.value = '';
+    lastNameElement.value = '';
+    employeeIDElement.value = '';
+    employeeTitleElement.value = '';
+    employeeSalaryElement.value = '';
     console.log(employeeArray)
 }
 
