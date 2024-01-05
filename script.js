@@ -17,5 +17,13 @@ function getFormData(event){
     let employeeIDElement = event.target.children[2].value
     let employeeTitleElement = event.target.children[3].value
     let employeeSalaryElement = event.target.children[4].value
-    
+
+    let newEmployee = {
+        firstName: firstNameElement,
+        lastName:lastNameElement,
+        ID: employeeIDElement,
+        title: employeeTitleElement,
+        salary: employeeSalaryElement
+    }
 }
+
