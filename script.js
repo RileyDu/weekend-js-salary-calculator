@@ -54,7 +54,7 @@ function getFormData(event) {
 <td>${newEmployee.ID}</td>
 <td>${newEmployee.title}</td>
 <td>${newEmployee.salary}</td>
-<td><button>DELETE</button></td>
+<td><button onclick='removeRow()'>DELETE</button></td>
 </tr>`;
 
 monthlyTotalElement = document.getElementById('monthlyTotal')
@@ -62,6 +62,10 @@ monthlyTotalElement.innerHTML = `Total Monthly: $${sumMonthlyTotal}`
 if (sumMonthlyTotal > 20000){
     monthlyTotalElement.style.backgroundColor = 'red'
 }
+}
+
+function removeRow(){
+    event.target.closest("tr").remove();
 }
 
 // function renderInputs() {
