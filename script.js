@@ -59,6 +59,9 @@ function getFormData(event) {
 
 monthlyTotalElement = document.getElementById('monthlyTotal')
 monthlyTotalElement.innerHTML = `Total Monthly: $${sumMonthlyTotal}`
+if (sumMonthlyTotal > 20000){
+    monthlyTotalElement.style.backgroundColor = 'red'
+}
 }
 
 // function renderInputs() {
