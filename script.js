@@ -25,5 +25,8 @@ function getFormData(event){
         title: employeeTitleElement,
         salary: employeeSalaryElement
     }
+
+    employeeArray.push(newEmployee)
+    console.log(employeeArray)
 }
 
