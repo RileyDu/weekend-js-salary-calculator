@@ -3,7 +3,7 @@ console.log("JS Works!");
 onReady();
 
 let employeeArray = [];
-let monthlyTotal = 0;
+let sumMonthlyTotal = 0;
 
 function onReady() {
   const formElement = document.getElementById("form");
@@ -36,10 +36,10 @@ function getFormData(event) {
     salary: employeeSalaryValue,
   };
 
-  monthlyTotal += employeeSalaryValue / 12
+  sumMonthlyTotal += employeeSalaryValue / 12
 
   employeeArray.push(newEmployee);
-  
+
   firstNameElement.value = "";
   lastNameElement.value = "";
   employeeIDElement.value = "";
@@ -56,6 +56,9 @@ function getFormData(event) {
 <td>${newEmployee.salary}</td>
 <td><button>DELETE</button></td>
 </tr>`;
+
+monthlyTotalElement = document.getElementById('monthlyTotal')
+monthlyTotalElement.innerHTML = `Total Monthly: $${sumMonthlyTotal}`
 }
 
 // function renderInputs() {
