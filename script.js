@@ -43,3 +43,12 @@ function getFormData(event){
     console.log(employeeArray)
 }
 
+let tbodyElement = document.getElementById('tbody')
+tbodyElement.innerHTML += <tr>
+<td> newEmployee.firstName </td>
+<td>newEmployee.lastName</td>
+<td>newEmployee.ID</td>
+<td>newEmployee.title</td>
+<td>newEmployee.salary</td>
+<td><button>DELETE</button></td>
+</tr>
