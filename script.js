@@ -54,7 +54,7 @@ function getFormData(event) {
 <td>${newEmployee.ID}</td>
 <td>${newEmployee.title}</td>
 <td>${newEmployee.salary}</td>
-<td><button onclick='removeRow()'>DELETE</button></td>
+<td><button id='deleteButton' onclick='removeRow()'>DELETE</button></td>
 </tr>`;
 
   monthlyTotalElement = document.getElementById("monthlyTotal");
