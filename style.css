@@ -1,72 +1,74 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 header {
-    text-align: center;
-    font-size: 2em;
-    background-color: gray;
-    color: white;
-    padding: 1em;
+  text-align: center;
+  font-size: 2em;
+  background-color: gray;
+  color: white;
+  padding: 1em;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
 }
 
 #form {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-    gap: 30px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  gap: 30px;
 }
 
 #container {
-    display: flex;
-align-items: center;
-justify-content: center;
-margin-left: auto;
-margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table {
-    margin-top: 10px;
-    width: 75%;
+  margin-top: 5px;
+  width: 75%;
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: center;
+th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
 }
 
 th {
-    background-color: gainsboro;
+  background-color: gainsboro;
 }
 
-tr:nth-child(even){
-    background-color: lightslategray;
-    color: white;
+tr:nth-child(even) {
+  background-color: lightslategray;
+  color: white;
 }
 
 #deleteButton {
-    background-color: rgba(94, 42, 64, 0.226);
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
+  background-color: rgba(94, 42, 64, 0.226);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
 }
 
 #deleteButton:hover {
-    background-color: red;
+  background-color: red;
 }
 
 #monthlyTotal {
-    text-align: center;
-    margin-top: 20px;
-    font-size:x-large
-}
-h2 {
-    text-align: center;
-    font-size: 30px
+  text-align: center;
+  margin-top: 20px;
+  font-size: x-large;
 }
