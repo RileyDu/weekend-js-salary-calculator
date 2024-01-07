@@ -36,7 +36,7 @@ function getFormData(event) {
     salary: employeeSalaryValue,
   };
 
-  sumMonthlyTotal += employeeSalaryValue / 12
+  sumMonthlyTotal += employeeSalaryValue / 12;
 
   employeeArray.push(newEmployee);
 
@@ -45,7 +45,7 @@ function getFormData(event) {
   employeeIDElement.value = "";
   employeeTitleElement.value = "";
   employeeSalaryElement.value = "";
-//   console.log(employeeArray);
+  //   console.log(employeeArray);
 
   let tbodyElement = document.getElementById("tbody");
   tbodyElement.innerHTML += `<tr>
@@ -57,15 +57,32 @@ function getFormData(event) {
 <td><button onclick='removeRow()'>DELETE</button></td>
 </tr>`;
 
-monthlyTotalElement = document.getElementById('monthlyTotal')
-monthlyTotalElement.innerHTML = `Total Monthly: $${sumMonthlyTotal}`
-if (sumMonthlyTotal > 20000){
-    monthlyTotalElement.style.backgroundColor = 'red'
-}
+  monthlyTotalElement = document.getElementById("monthlyTotal");
+  monthlyTotalElement.innerHTML = `Total Monthly: $${sumMonthlyTotal.toFixed(
+    2
+  )}`;
+  if (sumMonthlyTotal > 20000) {
+    monthlyTotalElement.style.backgroundColor = "red";
+  } else if (sumMonthlyTotal < 20000) {
+    monthlyTotalElement.style.backgroundColor = "";
+  }
 }
 
-function removeRow(){
-    event.target.closest("tr").remove();
+function removeRow() {
+  removedSalary = parseFloat(
+    event.target.parentNode.previousElementSibling.textContent
+  );
+  sumMonthlyTotal -= removedSalary / 12;
+  let monthlyTotalElement = document.getElementById("monthlyTotal");
+  monthlyTotalElement.innerHTML = `Total Monthly: $${sumMonthlyTotal.toFixed(
+    2
+  )}`;
+  event.target.closest("tr").remove();
+  if (sumMonthlyTotal > 20000) {
+    monthlyTotalElement.style.backgroundColor = "red";
+  } else if (sumMonthlyTotal < 20000) {
+    monthlyTotalElement.style.backgroundColor = "";
+  }
 }
 
 // function renderInputs() {
