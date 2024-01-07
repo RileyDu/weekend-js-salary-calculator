@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Add Employee</h1>
+    <header>
+      <h1>Salary Calculator</h1>
+    </header>
     <form id="form">
       <input placeholder="First Name" type="text" />
       <input placeholder="Last Name" type="text" />
@@ -16,20 +19,22 @@
       <input placeholder="Annual Salary" type="number" />
       <button type="submit">Submit</button>
     </form>
-    <table>
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Employee ID#</th>
-          <th>Employee Title</th>
-          <th>Annual Salary</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
-    <div id="monthlyTotal">
+    <div id="container">
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Employee ID#</th>
+            <th>Employee Title</th>
+            <th>Annual Salary</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
     </div>
+      <div id="monthlyTotal"></div>
+
   </body>
 </html>

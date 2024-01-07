@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    font-size: larger;
+    background-color: gray;
+    color: white;
+    padding: 2em;
+}
+
+#form {
+    width: 75%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#container {
+    display: flex;
+align-items: center;
+justify-content: center;
+}
+
+table {
+    margin-top: 10px;
+    width: 75%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: gainsboro;
+}
+
+tr:nth-child(even){
+    background-color: lightslategray;
+}
