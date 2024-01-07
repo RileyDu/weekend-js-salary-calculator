@@ -2,12 +2,12 @@ console.log("JS Works!");
 
 onReady();
 
-let employeeArray = [];
-let sumMonthlyTotal = 0;
+let employeeArray = []; // declared emptied, item added when form submitted
+let sumMonthlyTotal = 0; // this will be a running sum of salary / 12
 
 function onReady() {
   const formElement = document.getElementById("form");
-  formElement.addEventListener("submit", getFormData);
+  formElement.addEventListener("submit", getFormData); // calls the getFormData func when form submit
   // let submitButton = document.getElementById("submit");
 }
 
@@ -26,7 +26,7 @@ function getFormData(event) {
   let employeeTitleValue = event.target.children[3].value;
 
   let employeeSalaryElement = event.target.children[4];
-  let employeeSalaryValue = event.target.children[4].value;
+  let employeeSalaryValue = event.target.children[4].value; // declared table inputs to variables and their values
 
   let newEmployee = {
     firstName: firstNameValue,
@@ -34,9 +34,9 @@ function getFormData(event) {
     ID: employeeIDValue,
     title: employeeTitleValue,
     salary: employeeSalaryValue,
-  };
+  }; // assigned the variables to an employee object with matching form keys
 
-  sumMonthlyTotal += employeeSalaryValue / 12;
+  sumMonthlyTotal += employeeSalaryValue / 12; // monthly cost for each employee is summed
 
   employeeArray.push(newEmployee);
 
@@ -44,7 +44,7 @@ function getFormData(event) {
   lastNameElement.value = "";
   employeeIDElement.value = "";
   employeeTitleElement.value = "";
-  employeeSalaryElement.value = "";
+  employeeSalaryElement.value = ""; // clears the form
   //   console.log(employeeArray);
 
   let tbodyElement = document.getElementById("tbody");
@@ -55,44 +55,32 @@ function getFormData(event) {
 <td>${newEmployee.title}</td>
 <td>${newEmployee.salary}</td>
 <td><button id='deleteButton' onclick='removeRow()'>DELETE</button></td>
-</tr>`;
+</tr>`; // renders the submitted entry to the table on the DOM
 
   monthlyTotalElement = document.getElementById("monthlyTotal");
   monthlyTotalElement.innerHTML = `Total Monthly: $${sumMonthlyTotal.toFixed(
-    2
+    2 // renders the monthly total on DOM
   )}`;
   if (sumMonthlyTotal > 20000) {
     monthlyTotalElement.style.backgroundColor = "red";
   } else if (sumMonthlyTotal < 20000) {
     monthlyTotalElement.style.backgroundColor = "";
-  }
+  } // color changes to red if monthly sum is more than $20k
 }
 
 function removeRow() {
   removedSalary = parseFloat(
     event.target.parentNode.previousElementSibling.textContent
-  );
-  sumMonthlyTotal -= removedSalary / 12;
+  ); // finds the salary for the removed row, it is last td element before the delete button
+  sumMonthlyTotal -= removedSalary / 12; // take it out of the running total
   let monthlyTotalElement = document.getElementById("monthlyTotal");
   monthlyTotalElement.innerHTML = `Total Monthly: $${sumMonthlyTotal.toFixed(
     2
-  )}`;
-  event.target.closest("tr").remove();
+  )}`; // render the loss to the dom
+  event.target.closest("tr").remove(); // remove the row from the dom
   if (sumMonthlyTotal > 20000) {
     monthlyTotalElement.style.backgroundColor = "red";
   } else if (sumMonthlyTotal < 20000) {
     monthlyTotalElement.style.backgroundColor = "";
-  }
+  } // color changes to red if monthly sum is more than $20k
 }
-
-// function renderInputs() {
-//   let tbodyElement = document.getElementById("tbody");
-//   tbodyElement.innerHTML += `<tr>
-// <td> ${newEmployee.firstName} </td>
-// <td>${newEmployee.lastName}</td>
-// <td>${newEmployee.ID}</td>
-// <td>${newEmployee.title}</td>
-// <td>${newEmployee.salary}</td>
-// <td><button>DELETE</button></td>
-// </tr>`;
-// }
